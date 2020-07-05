@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:cherryinstangramuiclone/models/profile_model.dart';
-import 'package:cherryinstangramuiclone/shared/constants/user_model.dart';
+import 'package:cherryinstangramuiclone/shared/constants/user_constants.dart';
 import 'package:http/http.dart' as http;
 
 Future<ProfileModel> downloadUserProfile() async {

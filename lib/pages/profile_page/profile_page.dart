@@ -1,6 +1,4 @@
-import 'package:cherryinstangramuiclone/models/post_model.dart';
 import 'package:cherryinstangramuiclone/models/profile_model.dart';
-import 'package:cherryinstangramuiclone/models/user_model.dart';
 import 'package:cherryinstangramuiclone/pages/profile_page/sub_sections/photo_grid_section.dart';
 import 'package:cherryinstangramuiclone/pages/profile_page/sub_sections/profile_header_section.dart';
 import 'package:cherryinstangramuiclone/provider/user_profile.dart';
@@ -13,12 +11,25 @@ class ProfilePage extends StatelessWidget {
       future: downloadUserProfile(),
       builder: (BuildContext context, AsyncSnapshot<ProfileModel> snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          return CustomScrollView(
-            slivers: <Widget>[
-              ProfileHeaderSection(user: snapshot.data.user),
-              PhotoGridSection(posts: snapshot.data.posts),
-            ],
-          );
+          if (snapshot.hasData) {
+            return CustomScrollView(
+              slivers: <Widget>[
+                ProfileHeaderSection(user: snapshot.data.user),
+                PhotoGridSection(posts: snapshot.data.posts),
+              ],
+            );
+          } else {
+            return Center(
+              child: Text(
+                "Utente Non Esistente",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            );
+          }
         } else {
           return Center(
             child: CircularProgressIndicator(),

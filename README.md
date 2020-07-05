@@ -1,16 +1,18 @@
 # cherryinstangramuiclone
 
-A new Flutter application.
+- A simple UI instangram clone made by [Cherry Social](https://cherrysocial.it/)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a simple starting point for any Flutter application.
+You can add whatever state management library you want using this template and changing it where you want.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+We use the instagram graph api to get public info about a specific user.
+To do that we use his unique instagram username.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# TO CHANGE INSTANGRAM USERNAME PLEASE GO TO 
+- shared
+-- constants
+--- user_constants 
+---- USERNAME_TO_READ

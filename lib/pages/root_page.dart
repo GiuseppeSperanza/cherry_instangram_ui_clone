@@ -1,8 +1,28 @@
 import 'package:cherryinstangramuiclone/pages/profile_page/profile_page.dart';
+import 'package:cherryinstangramuiclone/shared/constants/general.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class RootPage extends StatelessWidget {
+  Future<void> _showDialog(BuildContext context, int index) {
+    return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Text('${BOTTOM_TAB_NAVIGATION[index]}'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Ok'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,6 +32,7 @@ class RootPage extends StatelessWidget {
       ),
       body: ProfilePage(),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: (int index) => _showDialog(context, index),
         selectedIconTheme: IconThemeData(color: Colors.indigo),
         unselectedIconTheme: IconThemeData(color: Colors.black),
         showUnselectedLabels: false,
@@ -19,23 +40,23 @@ class RootPage extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(SimpleLineIcons.home),
-            title: Text("Home"),
+            title: Text(BOTTOM_TAB_NAVIGATION[0]),
           ),
           BottomNavigationBarItem(
             icon: Icon(Feather.search),
-            title: Text("Home"),
+            title: Text(BOTTOM_TAB_NAVIGATION[1]),
           ),
           BottomNavigationBarItem(
             icon: Icon(SimpleLineIcons.plus),
-            title: Text("Home"),
+            title: Text(BOTTOM_TAB_NAVIGATION[2]),
           ),
           BottomNavigationBarItem(
             icon: Icon(SimpleLineIcons.heart),
-            title: Text("Home"),
+            title: Text(BOTTOM_TAB_NAVIGATION[3]),
           ),
           BottomNavigationBarItem(
             icon: Icon(SimpleLineIcons.user),
-            title: Text("Home"),
+            title: Text(BOTTOM_TAB_NAVIGATION[4]),
           ),
         ],
       ),
