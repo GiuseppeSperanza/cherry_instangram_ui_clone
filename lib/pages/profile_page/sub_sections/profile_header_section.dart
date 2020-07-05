@@ -1,4 +1,5 @@
 import 'package:cherryinstangramuiclone/models/user_model.dart';
+import 'package:cherryinstangramuiclone/widgets/dialog.dart';
 import 'package:cherryinstangramuiclone/widgets/user_statistics.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -56,7 +57,7 @@ class ProfileHeaderSection extends StatelessWidget {
                             width: 6,
                           ),
                           MaterialButton(
-                            onPressed: () {},
+                            onPressed: () => showDialogPopup(context, "Segui"),
                             minWidth:
                                 double.infinity, //prende tutta la larghezza
                             height: 30,

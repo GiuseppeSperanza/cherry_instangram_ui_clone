@@ -1,28 +1,10 @@
 import 'package:cherryinstangramuiclone/pages/profile_page/profile_page.dart';
 import 'package:cherryinstangramuiclone/shared/constants/general.dart';
+import 'package:cherryinstangramuiclone/widgets/dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class RootPage extends StatelessWidget {
-  Future<void> _showDialog(BuildContext context, int index) {
-    return showDialog<void>(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: Text('${BOTTOM_TAB_NAVIGATION[index]}'),
-          actions: <Widget>[
-            FlatButton(
-              child: Text('Ok'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +14,8 @@ class RootPage extends StatelessWidget {
       ),
       body: ProfilePage(),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (int index) => _showDialog(context, index),
+        onTap: (int index) =>
+            showDialogPopup(context, BOTTOM_TAB_NAVIGATION[index]),
         selectedIconTheme: IconThemeData(color: Colors.indigo),
         unselectedIconTheme: IconThemeData(color: Colors.black),
         showUnselectedLabels: false,
