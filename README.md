@@ -16,3 +16,6 @@ To do that we use his unique instagram username.
 ### constants
 ### user_constants 
 ### USERNAME_TO_READ
+
+
+![alt text](https://github.com/GiuseppeSperanza/cherry_instangram_ui_clone/blob/master/test-screen.png)
