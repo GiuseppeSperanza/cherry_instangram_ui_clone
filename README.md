@@ -12,7 +12,7 @@ We use the instagram graph api to get public info about a specific user.
 To do that we use his unique instagram username.
 
 # TO CHANGE INSTANGRAM USERNAME PLEASE GO TO 
-- shared
--- constants
---- user_constants 
----- USERNAME_TO_READ
+### shared
+### constants
+### user_constants 
+### USERNAME_TO_READ
