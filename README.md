@@ -1,6 +1,6 @@
 # cherryinstangramuiclone
 
-- A simple UI instangram clone made by [Cherry Social](https://cherrysocial.it/)
+- A simple UI instangram clone made by [Giuseppe Speranza](https://giuseppesperanza.dev/)
 
 ## Getting Started
 
